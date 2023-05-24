@@ -1,9 +1,21 @@
 package com.rpg_example;
 
 public class Character {
+    // private fields
     private String name;
     private int strength;
+    private int dexterity;
 
+    // instance methods
+    public Character(String name) {
+        this.name = name;
+    }
+
+    // getters and setters
+    public String getName() {
+        return name;
+    }
+    
     public int getStrength() {
         return strength;
     }
@@ -11,12 +23,21 @@ public class Character {
     public void setStrength(int strength) {
         this.strength = strength;
     }
-
-    public Character(String charName) {
-        name = charName;
-    }
     
+    public int getDexterity() {
+        return dexterity;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
+    }
+
+
+    // toString override
     public String toString() {
-        return name;
+        String output = "Character Name: " + name;
+        output += "\nStrength: " + strength;
+        output += "\nDexterity: " + dexterity;
+        return output;
     }
 }
