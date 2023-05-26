@@ -19,7 +19,9 @@ public final class App {
         // Demonstrate the getters and setters
         hero.setDexterity(9);
         hero.setStrength(11);
-        hero.setStrength(-5);
+        hero.addStrength(-5);
+        hero.setConstitution((int)(Math.random() * 6) + 1);
+        
         System.out.println(hero.getDexterity());
 
         System.out.println(hero);

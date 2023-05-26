@@ -1,10 +1,15 @@
 package com.rpg_example;
 
+import java.util.ArrayList;
+
 public class Character {
     // add fields
     private String name;
     private int strength;
     private int dexterity;
+    private ArrayList<String> inventory = new ArrayList<String>();
+    private int maxInventorySize = 5;
+    private int constitution;
 
     // Constructor Method
     public Character(String name) {
@@ -12,6 +17,24 @@ public class Character {
     }
 
     // Getters and Setters
+    public int getConstitution() {
+        return constitution;
+    }
+
+    public void setConstitution(int constitution) {
+        this.constitution = constitution;
+    }
+
+    public ArrayList<String> getInventory() {
+        return inventory;
+    }
+
+    public void addItem(String item) {
+        // Don't allow the inventory to grow larger than a set amount
+        // hint .size() 
+        this.inventory.add(item);
+    }
+    
     public String getName() {
         return name;
     }
@@ -21,7 +44,11 @@ public class Character {
     }
 
     public void setStrength(int strength) {
-        this.strength += strength;
+        this.strength = strength;
+    }
+
+    public void addStrength(int amount) {
+        this.strength += amount;
     }
 
     public int getDexterity() {
@@ -38,6 +65,7 @@ public class Character {
         output += "Name: " + this.name;
         output += "\nStrength: " + this.strength;
         output += "\nDexterity: " + this.dexterity;
+        output += "\nConstitution: " + this.constitution;
         return output;
     }
 }
