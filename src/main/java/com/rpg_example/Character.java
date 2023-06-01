@@ -3,14 +3,19 @@ package com.rpg_example;
 import java.util.ArrayList;
 
 public class Character {
+
     // add fields
     private String name;
-    private int strength;
-    private int dexterity;
+    private int strength = DM.rollStats();
+    private int dexterity = DM.rollStats();
+    private int strengthModifier = DM.getStatsModifier(strength);
     private ArrayList<String> inventory = new ArrayList<String>();
     private int maxInventorySize = 5;
     private int constitution;
 
+    public static void main(String[] args) {
+        System.out.println("Yo, I'm testing this Character class");
+    }
     // Constructor Method
     public Character(String name) {
         this.name = name;
